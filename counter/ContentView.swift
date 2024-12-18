@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var count = 0
+    @State var countString = "0"
     var body: some View {
         VStack {
-            HStack(spacing: 90) {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Button("Button") {
-                    print("hello world")
-                }
-                .buttonStyle(.bordered)
+            Text(countString)
+            Button("+1") {
+                count += 1
+                countString = String(count)
             }
-            Text("Hello, world!")
+            .frame(width: 100, height: 100)
         }
         .padding()
     }
