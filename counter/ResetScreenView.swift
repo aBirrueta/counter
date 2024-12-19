@@ -12,17 +12,24 @@ struct ResetScreenView: View {
     @Binding var count: Int
     @Binding var stringCount: String
     var body: some View {
-        VStack{
+        VStack {
             Text("Are you sure you want to reset")
-            HStack{
+                .fontWeight(.bold)
+                .font(.system(size: 15))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 0.0)
+                .frame(width: 166.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/40.0)
+            HStack {
                 Button("Confirm") {
                     dismiss()
                     count = 0
                     stringCount = "0"
                 }
+                .buttonStyle(.borderedProminent)
                 Button("Cancel") {
                     dismiss()
                 }
+                .buttonStyle(.bordered)
             }
         }
     }

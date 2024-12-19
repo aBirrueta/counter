@@ -15,17 +15,22 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text(countString)
+                .fontWeight(.bold)
+                .font(.system(size: 50))
             Button("+1") {
                 count += 1
                 countString = String(count)
             }
             .frame(width: 100, height: 100)
+            .buttonStyle(.borderedProminent)
             Button("reset") {
                 showingReset = true
             }
+            .buttonStyle(.bordered)
+            .buttonBorderShape(.buttonBorder)
         }
-        .padding()
-        .sheet(isPresented: $showingReset){
+        .padding(.vertical, 200.0)
+        .sheet(isPresented: $showingReset) {
             ResetScreenView(count: $count, stringCount: $countString)
         }
     }
