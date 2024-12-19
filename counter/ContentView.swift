@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @State var count = 0
     @State var countString = "0"
+    @State var showingReset = false
     var body: some View {
         VStack {
             Text(countString)
@@ -19,8 +20,14 @@ struct ContentView: View {
                 countString = String(count)
             }
             .frame(width: 100, height: 100)
+            Button("reset") {
+                showingReset = true
+            }
         }
         .padding()
+        .sheet(isPresented: $showingReset){
+            ResetScreenView(count: $count, stringCount: $countString)
+        }
     }
 }
 
