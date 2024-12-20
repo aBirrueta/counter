@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @State var count = 0
     @State var countString = "0"
     @State var showingReset = false

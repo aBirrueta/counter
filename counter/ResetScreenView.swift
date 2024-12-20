@@ -34,6 +34,7 @@ struct ResetScreenView: View {
         }
     }
 }
+
 #Preview {
     struct Preview: View {
         @State var count = 0
